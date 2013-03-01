@@ -2,101 +2,56 @@
 <html lang="en">
   <head>
     <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <title>Walk-a-City by travelgeeks</title>
-    <!-- Le styles -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        background-color: #f5f5f5;
-      }
-
-      .form-signin {
-        max-width: 300px;
-        padding: 19px 29px 29px;
-        margin: 0 auto 20px;
-        background-color: #fff;
-        border: 1px solid #e5e5e5;
-        -webkit-border-radius: 5px;
-           -moz-border-radius: 5px;
-                border-radius: 5px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-                box-shadow: 0 1px 2px rgba(0,0,0,.05);
-      }
-      .form-signin .form-signin-heading,
-      .form-signin .checkbox {
-        margin-bottom: 10px;
-      }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        font-size: 16px;
-        height: auto;
-        margin-bottom: 15px;
-        padding: 7px 9px;
-      }
-
+    <title>Walk-a-City by TravelGeeks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">  
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    
+    <style>
+      .navbar-inner {background:#191919; color:#FE6E4C; font-weight: bold; padding: 5px; line-height: 10;}
+      h3 {margin: 10px 0 10px 0; color:#FFEBCD; font-family: "Architects Daughter",Comic Sans MS, serif}
+      
     </style>
-    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-
+   
   </head>
 
-  <body>
+  <body style="background-color:#FFE4C4">
+    
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <div class="row-fluid">  
+            <div class="span12">  
+              <img src="http://i1310.photobucket.com/albums/s647/skylarian/logo_slant_zps4d172dcf.png">
+              <p><img src="http://i1310.photobucket.com/albums/s647/skylarian/select_city_zps4638fcdf.png"></p>
+            </div>
+          </div>
+          
+          <form class="well" style="background:#FDF5E6">
+            <label style="font-style:bold; font-family:'Calibri',sans serif; color:#000080; font-size:large" >Country:</label>
+            <select>
+              <option value="" selected>--country--</option>
+              <option value="What">France</option>
+              <option value="ever">Germany</option>
+              <option value="value">Sweden</option>
+              <option value="needed">Spain</option>
+            </select>
+            <label style="font-style:bold; font-family:'Calibri',sans serif; color:#000080; font-size:large">City:</label>
+            <select name="city">
+              <option value="" selected>--city--</option>
+              <option value="What">Paris</option>
+              <option value="ever">Lyon</option>
+              <option value="value">Toulouse</option>
+              <option value="needed">Bordeux</option>
+            </select>
+            <button type="submit" class="btn" style="background:#2C3939; color:#FDF5E6">
+                Explore!
+            </button>
+          </form>
 
-  <header>
-      <div class="inner">
-        <a href="http://travelgeeks.github.com/walkacity" ><h1>Walk-a-City</h1></a>
-        <h2></h2>
-        
-      </div>
-   </header>
-
-    <div class="container">
-
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <input type="password" class="input-block-level" placeholder="Password">
-        </br>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-      </form>
-
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
-
-  </body>
+    </body>
+          
 </html>
