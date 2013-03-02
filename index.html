@@ -68,8 +68,20 @@
           opt.text = text;
           ddl.options.add(opt);
       }
+
+      function redirectTo() {
+        var citylist = document.getElementById("ddl2");
+        var city = citylist.options[citylist.selectedIndex].text;
+        if(city == 'Paris'){
+          window.location = "paris.html";
+        }else{
+          window.location = "index.html";
+        }
+        
+      }
+      
     </script>          
-          <form class="well" style="background:#FDF5E6">
+          <form class="well" style="background:#FDF5E6" action="javascript:redirectTo()" >
             <label style="font-style:bold; font-family:'Calibri',sans serif; color:#000080; font-size:large" >Country:</label>
               <select id="ddl" onchange="configureDropDownLists(this,'ddl2')">
               <option value=""></option>
@@ -80,10 +92,8 @@
             <label style="font-style:bold; font-family:'Calibri',sans serif; color:#000080; font-size:large">City:</label>
             <select id="ddl2">
             </select>
-            <a href="http://travelgeeks.github.com/walkacity/paris.html" >
-            <button class="btn" style="background:#2C3939; color:#FDF5E6">Explore!</button>
-            </a>
-            
+            <button id="explore" class="btn" style="background:#2C3939; color:#FDF5E6"">Explore!</button>
+  
           </form>
 
     </body>
