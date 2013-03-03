@@ -15,7 +15,7 @@
 
 #slider {
 	width: 100px;			/* Set to slider width */
-	height: 200px;			/* Set to slider height */
+	height: 450px;			/* Set to slider height */
 	position: relative;
 	float: left;
 	overflow: hidden;		/* Hides the animations */
@@ -29,7 +29,7 @@
 
 #accordion {
 	width: 200px;			/* Set to accordion width */
-	height: 500px;			/* Set to image height */
+	height: 450px;			/* Set to image height */
 	font-family: Verdana;
 	font-size:x-small;
 	background: #eee;
