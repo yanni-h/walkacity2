@@ -7,6 +7,18 @@
     <link href="/geektest/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/geektest/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/geektest/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link rel="stylesheet" href="../stylesheets/slidorion.css" />
+    
+    <script src="../javascripts/jquery.min.js"></script>
+    <script src="../javascripts/jquery.easing.js"></script>
+    <script src="../javascripts/jquery.slidorion.min.js"></script>
+    
+    <script>
+     $(function() {
+	   	$('#slidorion').slidorion();
+	   });
+	  </script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,45 +48,53 @@
     </div>  
     </div>
     
-    <div class="container-fluid">
-    
-      <div class="row-fluid">  
-        <div class="span12">
-          <h3>Paris Top 5!</h3>
-        </div>
-      </div>
-      
-      <div class="row-fluid">  
-        <div class="span12">
-          <iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=202938132181845040631.0004d622ae12ac692681d&amp;ie=UTF8&amp;t=m&amp;ll=48.866013,2.300091&amp;spn=0.019761,0.036478&amp;z=14&amp;output=embed"></iframe><br />&nbsp
-        </div>
-      </div>
-      
-      <div class="row-fluid">
-      <ul class="thumbnails">
-        <li class="span3">
-          <a href="http://travelgeeks.github.com/walkacity/effiel.html" class="thumbnail">
-            <img src="http://static.neatorama.com/images/2007-07/eiffel-tower-day.jpg" alt="" width="100" height="100">
-          </a>
-        </li>
-        <li class="span3">
-          <a href="#" class="thumbnail">
-            <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/NotreDameI.jpg/250px-NotreDameI.jpg" alt="" width="100" height="100">
-          </a>
-        </li>
-        <li class="span3">
-          <a href="#" class="thumbnail">
-            <img src="http://parisriviera.netai.net/_images/about_01.jpg" alt="" width="100" height="100">
-          </a>
-        </li>
-        <li class="span3">
-          <a href="#" class="thumbnail">
-            <img src="http://www.students.sbc.edu/gregg09/Versailles%20images/Versailles%203.jpg" alt="" width="100" height="100">
-          </a>
-        </li>
-      </ul>
-      </div>
-    </div>             
+    <div id="slidorion">
+
+  	<div id="slider">
+			<div id="slide1" class="slide">
+				<img src="http://static.neatorama.com/images/2007-07/eiffel-tower-day.jpg" width="488" height="400">
+			</div>
+			<div id="slide2" class="slide">
+				<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/NotreDameI.jpg/250px-NotreDameI.jpg" width="488" height="400" />
+			</div>
+			<div id="slide3" class="slide">
+				<img src="http://parisriviera.netai.net/_images/about_01.jpg" width="488" height="400" />
+			</div>
+			<div id="slide4" class="slide">
+				<img src="http://www.students.sbc.edu/gregg09/Versailles%20images/Versailles%203.jpg" width="488" height="400" />
+			</div>
+		</div>
+
+		<div id="accordion">
+			<div class="link-header">1. Effiel Tower</div>
+			<div class="link-content">
+				<p>The Effiel tower stands 320 metres (1,050 ft) tall, about the same height as an 81-storey building. During its construction,
+				the Eiffel Tower surpassed the Washington Monument to assume the title of the tallest man-made structure in the world, a title it 
+				held for 41 years, until the Chrysler Building in New York City was built in 1930. However, because of the addition, in 1957, of the 
+				antenna atop the Eiffel Tower, it is now taller than the Chrysler Building. Not including broadcast antennas, it is the second-tallest
+				structure in France, after the Millau Viaduct.</p>
+			</div>
+			<div class="link-header">2. Notre Dame de Paris</div>
+			<div class="link-content">
+				<p>Notre Dame de Paris, also known as Notre Dame Cathedral or simply Notre Dame, is a historic Roman Catholic Marian cathedral 
+				on the eastern half of the Île de la Cité in the fourth arrondissement of Paris, France.</p>
+			</div>
+			<div class="link-header">3. Arc de Triomphe</div>
+			<div class="link-content">
+				<p>Construction on the Arc de Triomphe was begun in 1806 to commemorate Napoleon Bonaparte's victories throughout Europe, but as he began to lose
+				battles the project was shelved and not completed until 1836 by King Louis-Philippe. The ostentatious monument is now at the center of the world's 
+				largest traffic roundabout and marks the start of the Champs-Elysées. Today it is one of Paris' most famous tourist attractions and millions of 
+				visitors climb the long stairway to the top every year.</p>
+			</div>
+			<div class="link-header">4. Palace of Versailles</div>
+			<div class="link-content">
+				<p>The Palace of Versailles, also known as The Château de Versailles, has been the scene for several historic events, not the least of which was 
+				the signing, on 28 June 1919 within the Hall of Mirrors, of the Peace Treaty between defeated Germany and the Allies that brought the First
+				World War officially to an end. The signing of the treaty at Versailles, of course, mirrored the proclamation, in 1871 within the same long hall,
+				of the establishment of the German Empire under the Prussian king, subsequently the Kaiser.</p>
+			</div>
+
+	</div>             
     
   </body>
 </html>
