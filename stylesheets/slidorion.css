@@ -1,6 +1,6 @@
 /* Slidorion Stylesheet */
 #slidorion {
-	width: 100px;  		/* Set to slidorion width. Is equal to #slider + #accordion width */
+	width: 500px;  		/* Set to slidorion width. Is equal to #slider + #accordion width */
 	height: 300px;			/* Set to slidorion height. Is equal to #slider and #accordion height */
 	position: relative;
 	left: 50%;
@@ -14,8 +14,8 @@
 }
 
 #slider {
-	width: 0px;			/* Set to slider width */
-	height: 0px;			/* Set to slider height */
+	width: 250px;			/* Set to slider width */
+	height: 300px;			/* Set to slider height */
 	position: relative;
 	float: left;
 	overflow: hidden;		/* Hides the animations */
@@ -28,7 +28,7 @@
 }
 
 #accordion {
-	width: 100px;			/* Set to accordion width */
+	width: 250px;			/* Set to accordion width */
 	height: 300px;			/* Set to image height */
 	font-family: Verdana;
 	font-size:x-small;
@@ -74,7 +74,7 @@
 }
 
 #accordion > .link-content {
-	height: 111px;			/* This height needs to be changed as it depends on the accordion height and number of tabs */
+	height: 150px;			/* This height needs to be changed as it depends on the accordion height and number of tabs */
 	font-weight: normal;
 	font-size: 13px;
 	line-height:20px;
