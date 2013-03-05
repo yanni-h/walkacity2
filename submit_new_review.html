@@ -41,7 +41,7 @@
           <img src="http://i1310.photobucket.com/albums/s647/skylarian/post_review_zps7a38036d.png">
         </legend>
         <br/>
-        <label>[Route Name]</label>
+        <label id="route">You are reviewing [Route Name]</label>
           <textarea rows="4" class="span12" placeholder="How was your trip?"></textarea>
         <label>Rating:</label>
         <select>
@@ -56,7 +56,16 @@
           <button type="button" class="btn">Cancel</button>
         </a>
       </fieldset>
-    </form> 
+    </form>
+    
+    <script>
+      var url = location.href;
+      if(url == "http://travelgeeks.github.com/geektest/submit_new_review.html?RouteName=Paris+Top+5")
+      {
+        var route="You are reviewing Paris Top 5!";
+        document.getElementById("route").innerHTML=route;
+      }
+    </script>
     
     </div>           
      
