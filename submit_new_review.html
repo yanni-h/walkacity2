@@ -29,7 +29,8 @@
   <body style="background-color:#FFE4C4">
   
     <script>
-      if(username==null){
+      var user=sessionStorage.getItem("username");
+      if(user==null){
         window.location="userLogin.html";
       }
     </script>
