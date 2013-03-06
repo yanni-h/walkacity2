@@ -53,8 +53,8 @@
       
       <h5 class="text-center">Average Rating: 4.3/5</h5>
       <script>
-        var timestamp = 654524560; // UNIX timestamp in seconds
-        var xx = new Date();
+        var currentTime = new Date();
+        var day = currentTime.getDate();
         var newReview=sessionStorage.getItem("review");
         var user=sessionStorage.getItem("username");
         if(newReview!=null){
@@ -62,8 +62,9 @@
           document.write("<p><strong>"+user+" at 18:47pm:</strong></p>");
           document.write("<p>"+newReview+"</p>");
           document.write("</div>");
-          xx.setTime(timestamp*1000); // javascript timestamps are in milliseconds
-          document.write(xx.toUTCString());
+          
+          day.setTime(currentTime); // javascript timestamps are in milliseconds
+          document.write(day.toUTCString());
         }
         
       </script>
