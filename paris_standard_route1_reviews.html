@@ -54,7 +54,8 @@
       <h5 class="text-center">Average Rating: 4.3/5</h5>
       <script>
         var currentTime = new Date();
-        var time
+        var hours = currentTime.getHours()
+        var minutes = currentTime.getMinutes()
         var newReview=sessionStorage.getItem("review");
         var user=sessionStorage.getItem("username");
         if(newReview!=null){
@@ -62,7 +63,16 @@
           document.write("<p><strong>"+user+" at 18:47pm:</strong></p>");
           document.write("<p>"+newReview+"</p>");
           document.write("</div>");
-          document.write(currentTime);
+        
+          if (minutes < 10){
+            minutes = "0" + minutes
+          }
+          document.write(hours + ":" + minutes + " ")
+            if(hours > 11){
+          document.write("PM")
+          } else {
+          document.write("AM")
+          }
         }
         
       </script>
