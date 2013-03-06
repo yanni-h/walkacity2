@@ -61,7 +61,7 @@
         if(newReview!=null){
           document.write("<div class='well well-small'>");
           document.write("<p>");
-          document.write("<strong>"+user+" at </strong>");
+          document.write("<strong>"+user+" at ");
           if (minutes < 10){
             minutes = "0" + minutes +":"
           }
@@ -71,11 +71,9 @@
           } else {
           document.write("AM:")
           }
-          document.write("</p>");
+          document.write("</strong></p>");
           document.write("<p>"+newReview+"</p>");
-          document.write("</div>");
-        
-          
+          document.write("</div>");        
         }
         
       </script>
