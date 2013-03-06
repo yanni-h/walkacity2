@@ -24,6 +24,17 @@
         window.location="paris_standard_route1_reviews.html";
       }
     </script>
+    
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("button").click(function(event){
+          $("span").text(event.timeStamp);
+        });
+      });
+    </script>
+    
   </head>
 
   <body style="background-color:#FFE4C4">
