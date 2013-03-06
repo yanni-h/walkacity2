@@ -67,6 +67,16 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+                                   
+    <script>
+      function processLogin() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("password", password);
+        window.location="submit_new_review.html";
+      }
+    </script>
   </head>
 
   <body style="background-color:#FFE4C4">
@@ -87,16 +97,12 @@
     </div>
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" action="javascript:processLogin()">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <input type="password" class="input-block-level" placeholder="Password">
+        <input type="text" class="input-block-level" placeholder="Username" id="username">
+        <input type="password" class="input-block-level" placeholder="Password" id="password">
         </br>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        </br>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <button class="btn btn-large btn-primary">Sign in</button>
       </form>
 
     </div> <!-- /container -->
