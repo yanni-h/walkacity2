@@ -54,7 +54,7 @@
       <h5 class="text-center">Average Rating: 4.3/5</h5>
       <script>
         var currentTime = new Date();
-        var day = currentTime.getDate();
+        var time
         var newReview=sessionStorage.getItem("review");
         var user=sessionStorage.getItem("username");
         if(newReview!=null){
@@ -62,9 +62,7 @@
           document.write("<p><strong>"+user+" at 18:47pm:</strong></p>");
           document.write("<p>"+newReview+"</p>");
           document.write("</div>");
-          
-          day.setTime(currentTime); // javascript timestamps are in milliseconds
-          document.write(day.toUTCString());
+          document.write(currentTime);
         }
         
       </script>
