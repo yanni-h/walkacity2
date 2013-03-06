@@ -53,9 +53,10 @@
       <h5 class="text-center">Average Rating: 4.3/5</h5>
       <script>
         var newReview=sessionStorage.getItem("review");
+        var user=sessionStorage.getItem("username");
         if(newReview!=null){
           document.write("<div class='well well-small'>");
-          document.write("<p><strong>UserABC at 18:47pm:</strong></p>");
+          document.write("<p><strong>"+user+" at 18:47pm:</strong></p>");
           document.write("<p>"+newReview+"</p>");
           document.write("</div>");
         }
