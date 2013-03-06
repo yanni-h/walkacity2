@@ -54,22 +54,26 @@
       <h5 class="text-center">Average Rating: 4.3/5</h5>
       <script>
         var currentTime = new Date();
-        var hours = currentTime.getHours()
-        var minutes = currentTime.getMinutes()
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDate();
+        var year = currentTime.getFullYear();
         var newReview=sessionStorage.getItem("review");
         var user=sessionStorage.getItem("username");
         if(newReview!=null){
           document.write("<div class='well well-small'>");
           document.write("<p>");
           document.write("<strong>"+user+" at ");
+          document.write(month + "/" + day + "/" + year +" ");
           if (minutes < 10){
             minutes = "0" + minutes +":"
           }
-          document.write(hours + ":" + minutes + " ")
+          document.write(hours + ":" + minutes + " ");
             if(hours > 11){
-          document.write("PM:")
+          document.write("PM:");
           } else {
-          document.write("AM:")
+          document.write("AM:");
           }
           document.write("</strong></p>");
           document.write("<p>"+newReview+"</p>");
