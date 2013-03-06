@@ -60,19 +60,22 @@
         var user=sessionStorage.getItem("username");
         if(newReview!=null){
           document.write("<div class='well well-small'>");
-          document.write("<p><strong>"+user+" at 18:47pm:</strong></p>");
-          document.write("<p>"+newReview+"</p>");
-          document.write("</div>");
-        
+          document.write("<p>");
+          document.write("<strong>"+user+" at </strong>");
           if (minutes < 10){
-            minutes = "0" + minutes
+            minutes = "0" + minutes +":"
           }
           document.write(hours + ":" + minutes + " ")
             if(hours > 11){
-          document.write("PM")
+          document.write("PM:")
           } else {
-          document.write("AM")
+          document.write("AM:")
           }
+          document.write("</p>");
+          document.write("<p>"+newReview+"</p>");
+          document.write("</div>");
+        
+          
         }
         
       </script>
