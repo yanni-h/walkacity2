@@ -51,6 +51,15 @@
       </div>
       
       <h5 class="text-center">Average Rating: 4.3/5</h5>
+      <script>
+        var newReview=sessionStorage.getItem("review");
+        if(newReview!="null"){
+          document.write("<div class='well well-small'>");
+          document.write("<p><strong>UserABC at 18:47pm:</strong></p>");
+          document.write("<p>"+newReview+"</p>");
+          document.write("</div>");
+        }
+      </script>
       <div class="well well-small">
         <p><strong>User123 at 18:41pm:</strong></p>
         <p>This route is really awesome! Explored all the places I wanted to today!</p>
