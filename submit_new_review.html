@@ -14,6 +14,16 @@
       .navbar-inner {background:#2C3939; color:#FDF5E6; font-weight: bold; padding: 5px; line-height: 5;}
       h3 {margin: 10px 0 10px 0; color:#2C3939; font-family: "Architects Daughter",Comic Sans MS, serif}
     </style>
+    
+    <script>
+      function processForm() {
+        var review = document.getElementById("review").value;
+        var rating = document.getElementById("rating").value;
+        sessionStorage.setItem("review", review);
+        sessionStorage.setItem("rating", rating);
+        window.location="paris_standard_route1_reviews.html";
+      }
+    </script>
   </head>
 
   <body style="background-color:#FFE4C4">
@@ -35,7 +45,7 @@
 
     <div class="container-fluid">
       
-    <form>
+    <form action="javascript:processForm()">
       <fieldset>
         <legend>
           <img src="http://i1310.photobucket.com/albums/s647/skylarian/post_review_zps7a38036d.png">
@@ -48,9 +58,9 @@
             <option>Paris Top 5!</option>
             <option>Shop Paris!</option>
           </select>
-          <textarea rows="4" class="span12" placeholder="How was your trip?"></textarea>
+          <textarea rows="4" class="span12" placeholder="How was your trip?" id="review"></textarea>
         <label>Rating:</label>
-        <select>
+        <select id="rating">
           <option>1 boring...</option>
           <option>2</option>
           <option>3</option>
@@ -61,10 +71,7 @@
           localStorage.reviews="Eiffel Tower is awesome!";
           localStorage.rating="5";
         </script>
-        <button type="submit" class="btn" style="background:#2C3939; color:#FDF5E6">Submit</button>
-        <a href="http://travelgeeks.github.com/walkacity/paris_standard_route1_reviews.html" >
-          <button type="button" class="btn">Cancel</button>
-        </a>
+        <button class="btn" style="background:#2C3939; color:#FDF5E6">Submit</button>
       </fieldset>
     </form>
     
