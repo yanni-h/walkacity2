@@ -20,15 +20,47 @@
     </script>
 
     <script>
+        var map;
+        var loc;//
+        var tempArray = [];//
+        var markersArray = [];
         function initialize(){
           var mapProp = {
             center:new google.maps.LatLng(48.858742,2.350850),
             zoom:12,
             mapTypeId:google.maps.MapTypeId.ROADMAP
           };
-          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          
+          //listener for clicking on map to add marker
+          google.maps.event.addListener(map, 'click', function(event) {
+            addTempMarker(event.latLng);
+            loc = event.latLng; //
+          });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
+        
+       
+        
+        //addmarker function
+        function addTempMarker(location) {
+          deleteOverlays();
+          marker = new google.maps.Marker({
+            position: location,
+            map: map
+          });
+          tempArray.push(marker);
+        }
+        
+        function deleteOverlays() {
+          if (tempArray) {
+            for (i in tempArray) {
+              tempArray[i].setMap(null);
+            }
+            tempArray.length = 0;
+          }
+        }
+      
     </script>
     <!--googlemap codes ends here -->
     
@@ -42,7 +74,9 @@
       </div>
     </header>
 
-    <div id="googleMap" style="width:500px;height:380px;"></div>
+    <div id="googleMap" style="width:400px;height:320px;"></div>
+    
+    
     
   </body>
 </html>
