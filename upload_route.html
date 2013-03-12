@@ -13,7 +13,25 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Walk-a-City by travelgeeks</title>
+    <title>Walk-a-City by travelgeeks</title
+    
+    <!--googlemap codes begin here -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+    </script>
+
+    <script>
+        function initialize(){
+          var mapProp = {
+            center:new google.maps.LatLng(48.858742,2.350850),
+            zoom:12,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <!--googlemap codes ends here -->
+    
   </head>
 
   <body>
@@ -21,26 +39,10 @@
       <div class="inner">
         <a href="http://travelgeeks.github.com/walkacity" ><h1>Walk-a-City</h1></a>
         <h2></h2>
-        
       </div>
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <img src=http://4.bp.blogspot.com/_efX5KJt749M/S6-0aJwKdPI/AAAAAAAAA1Q/AvMRzOT9m7I/s1600/Paris+Google+Maps.jpg width="500" height="350" />
-          <br/>
-          <form name="input" action="" method="get">
-          <input type="text" name="location1" value="eiffel tower"><br/>
-          <input type="text" name="location2">
-          <input type="submit" value="Add more">
-          </form>
-          
-          <div id="content" style="text-align:left;">
-            <a href="http://travelgeeks.github.com/walkacity/finalize_route.html" ><button>Next</button></a>
-          </div>
-          
-          
+    <div id="googleMap" style="width:500px;height:380px;"></div>
     
   </body>
 </html>
