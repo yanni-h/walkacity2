@@ -32,7 +32,7 @@
           };
           map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
           
-          //listener for clicking on map to add marker
+          //listener for clicking on map to add a temp marker
           google.maps.event.addListener(map, 'click', function(event) {
             addTempMarker(event.latLng);
             loc = event.latLng; //
@@ -40,26 +40,27 @@
         }
         google.maps.event.addDomListener(window, 'load', initialize);
         
-       
         
-        //addmarker function
+        //addTempMarker function
         function addTempMarker(location) {
-          deleteOverlays();
-          marker = new google.maps.Marker({
-            position: location,
-            map: map
-          });
-          tempArray.push(marker);
-        }
-        
-        function deleteOverlays() {
           if (tempArray) {
             for (i in tempArray) {
               tempArray[i].setMap(null);
             }
             tempArray.length = 0;
           }
+          marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            draggable: true
+          });
+          tempArray.push(marker);
+          var latbox = document.getElementById("latbox");
+          latbox.value = location.lat();
+          var lngbox = document.getElementById("lngbox");
+          lngbox.value = location.lng();
         }
+       
       
     </script>
     <!--googlemap codes ends here -->
@@ -76,7 +77,8 @@
 
     <div id="googleMap" style="width:400px;height:320px;"></div>
     
-    
+    Lat: <input size="15" type="text" id="latbox" name="lat" value="">
+    Long: <input size="15" type="text" id="lngbox" name="lng" value="">
     
   </body>
 </html>
