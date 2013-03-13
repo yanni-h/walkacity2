@@ -11,9 +11,9 @@
 	padding-left:12px; /*SPACE FOR BACKGROUND*/
 }
 .menu .treeopen{
-	background:url("http://images.wikia.com/uncyclopedia/images/b/b2/Plus_sign.png") left center no-repeat;
+	background:url("http://images.wikia.com/uncyclopedia/images/b/b2/Plus_sign.png") left no-repeat;
 }
 
 .menu .treeclosed{
-	background:url("http://t2ak.roblox.com/1a7f27beac9a8df44eaad1da50e0f1bf") left center no-repeat;
+	background:url("http://t2ak.roblox.com/1a7f27beac9a8df44eaad1da50e0f1bf") left no-repeat;
 }
