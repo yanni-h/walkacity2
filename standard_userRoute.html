@@ -11,6 +11,18 @@
 	
     <script src="./javascripts/initMenus.js" type="text/javascript"></script>
 
+    <script src="http://www.acmeous.com/tutorials/demo/acmeousCollapsibleLists/acmeousCollapsibleLists.js" type="text/javascript"></script>
+    <script type="text/javascript"><!--
+	if (window.addEventListener) {
+		window.addEventListener("load", function(){makeCollapsible(document.getElementById('listCategories'), 1);}, false);
+	} else if (window.attachEvent) {
+		window.attachEvent("onload", function(){makeCollapsible(document.getElementById('listCategories'), 1);});
+	} else {
+		window.onload = function(){makeCollapsible(document.getElementById('listCategories'), 1);};
+	} 
+	-->
+	</script>
+
     <title>Walk-a-City by travelgeeks</title>
 
     <style>
@@ -55,6 +67,30 @@
 	</ul>
 </div>
          
+         
+         <ul id="listCategories">
+    <li>List by category
+        <ul>
+            <li><a href="#">Personal lists</a></li>
+            <li><a href="#">Dated lists</a></li>
+            <li><a href="#">Amount lists</a></li>
+        </ul>
+    </li>
+    <li>List by creation time
+        <ul>
+            <li><a href="#">1 month ago</a></li>
+            <li><a href="#">2 months ago</a></li>
+            <li><a href="#">3 months ago</a></li>
+        </ul>
+    </li>
+    <li>List by category
+        <ul>
+            <li><a href="#">Local lists</a></li>
+            <li><a href="#">National lists</a></li>
+            <li><a href="#">International lists</a></li>
+        </ul>
+    </li>
+</ul>
           
         </div>
       </div>
