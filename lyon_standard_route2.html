@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/geektest/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/geektest/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/geektest/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/movingboxes.css" />
+    
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="./javascripts/jquery.movingboxes.js"></script>
+ 
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  <style>
+  	/* Dimensions set via css in MovingBoxes version 2.2.2+ */
+		#slider { width: 225px; }
+		#slider li { width: 185px; }
+		
+		
+	</style>
+
+	<script>
+	$(function(){
+
+		$('#slider').movingBoxes({
+			/* width and panelWidth options deprecated, but still work to keep the plugin backwards compatible
+			width: 500,
+			panelWidth: 0.5,
+			*/
+			startPanel   : 1,      // start with this panel
+			wrap         : false,   // if true, the panel will "wrap" (it really rewinds/fast forwards) at the ends
+			buildNav     : true,   // if true, navigation links will be added
+			navFormatter : function(){ return "&#9679;"; } // function which returns the navigation text for each panel
+		});
+
+	});
+	</script>
+	
+    <style>
+      .navbar-inner {background:#2C3939; color:#FDF5E6; font-weight: bold; padding: 5px; line-height: 5;}
+      h3 {margin: 10px 0 10px 0; color:#2C3939; font-family: "Architects Daughter",Comic Sans MS, serif}
+    </style>
+
+    <title>Walk-a-City by travelgeeks</title>
+  </head>
+
+  <body style="background-color:#FFE4C4">
+    <div class="navbar navbar-fixed-top">  
+    <div class="navbar-inner">    
+      <ul class="nav">  
+        <li class="active" style="background:#2C3939">  
+          <a class="brand" href="http://travelgeeks.github.com/walkacity/index.html">
+            <img src="http://i1310.photobucket.com/albums/s647/skylarian/logo_word_zpsfd808e75.png" width="100" height="30">
+          </a>  
+        </li>  
+        <li><a href="#">Help</a></li>  
+      </ul>  
+    </div>  
+    </div>
+    
+  	<div class="container-fluid">
+    
+	    <div class="row-fluid">  
+	      <div class="span12">
+	        <h3>Bon Appetit Lyon!</h3>
+	      </div>
+	    </div>
+      
+			<div class="row-fluid">
+				<div class="span12">
+	      	<div align="left"><iframe height="285" width="285" align="left" marginheight="0" marginwidth="0" src="https://maps.google.com.sg/maps/ms?msa=0&amp;msid=209566199970928773219.0004d72947e8f75d4c349&amp;hl=en&amp;ie=UTF8&amp;t=m&amp;ll=45.764425,4.824972&amp;spn=0.012065,0.011844&amp;output=embed" seamless></iframe></div><br/>&nbsp
+	      </div>
+	    </div>
+        
+      <div class="row-fluid">
+      	<div class="span1">
+		<!-- MovingBoxes Slider -->
+					<ul id="slider">
+			
+						<li>
+							<img src="http://i1310.photobucket.com/albums/s647/skylarian/threegauls_zpsba56e469.jpg" alt="picture">
+							<h4>1.  Amphitheatre of the Three Gauls</h4>
+							<p><h6>The Amphitheatre of the Three Gauls (French: Amphithéâtre des Trois Gaules)of Lugdunum ... <a href="http://travelgeeks.github.com/walkacity/lyon_threegauls.html">more</a></h6></p>
+						</li>
+
+						<li>
+							<img src="http://i1310.photobucket.com/albums/s647/skylarian/fourviere_zps02ca58db.jpg" alt="picture">
+							<h4>2.  Ancient Theatre of Fourvière</h4>
+							<p><h6>The Roman theatre is a Roman ancient structure in Lyon, France. It was built next to ... <a href="http://travelgeeks.github.com/walkacity/lyon_fourviere.html">more</a></h6></p>
+						</li>
+			
+						<li>
+							<img src="http://i1310.photobucket.com/albums/s647/skylarian/galloroman_zps6b435a6b.jpg" alt="picture">
+							<h4>3. Gallo-Roman Museum</h4>
+							<p><h6>The Gallo-Roman Museum of Lyon is a museum on the Gallo-Roman civilisation in Lyon (Roman ... <a href="http://travelgeeks.github.com/walkacity/lyon_galloromanmuseum.html">more</a></h6></p>
+						</li>
+
+						<li>
+							<img src="http://i1310.photobucket.com/albums/s647/skylarian/odeonlyon_zpsd335734c.jpg" alt="picture">
+							<h4>4. Odeon of Lyon</h4>
+							<p><h6>The Odeon of Lyon is a small ancient Roman theatre near the summit of the Fourvière hill in Lyon, France. It forms a ... <a href="http://travelgeeks.github.com/walkacity/lyon_odeonoflyon.html">more</a></h6></p>
+						</li>
+
+					</ul><!-- end Slider #1 -->
+       	</div>
+       </div>
+       	
+    </div>
+       
+       
+
+
+<script type="text/javascript">
+	(function(){ var bsa = document.createElement('script'); bsa.type = 'text/javascript'; bsa.async = true; bsa.src = '//s3.buysellads.com/ac/bsa.js'; (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa); })();
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-68528-29']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga); })();
+</script>
+       	
+       	
+        
+  
+  </body>
+</html>
