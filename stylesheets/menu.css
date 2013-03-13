@@ -11,9 +11,9 @@
 	padding-left:12px; /*SPACE FOR BACKGROUND*/
 }
 .menu .treeopen{
-	background:url("../collapsed.png") left center no-repeat;
+	background:url("open.png") left center no-repeat;
 }
 
 .menu .treeclosed{
-	background:url("../expanded.png") left center no-repeat;
+	background:url("closed.png") left center no-repeat;
 }
