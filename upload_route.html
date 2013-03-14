@@ -53,6 +53,7 @@
           latbox.value = location.lat();
           var lngbox = document.getElementById("lngbox");
           lngbox.value = location.lng();
+          
         }
         
         function removeTempMarker(){
@@ -76,8 +77,17 @@
           });
           markersArray.push(marker);  
           removeTempMarker();
+          createInput();// create input box as well
        }
       
+        function createInput(){
+          var temp = document.getElementById("placeName");
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.value = temp.value;
+          temp.value = '';
+          document.getElementById("inputs").appendChild(input);
+        }
     </script>
     <!--googlemap codes ends here -->
     
@@ -103,6 +113,9 @@
         Point Name: <input size="35" type="text" id="placeName" name="PlaceName" value="">
         <td><button class="btn" onclick="addMarker()" >Add</button></td>
         <br>
+        <div id="inputs">
+          
+        </div>
         
         <b>Description:</b>
         <br>
