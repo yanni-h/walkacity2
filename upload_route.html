@@ -85,6 +85,7 @@
           var input = document.createElement('input');
           input.type = 'text';
           input.value = temp.value;
+          input.size="35";
           temp.value = '';
           document.getElementById("inputs").appendChild(input);
         }
@@ -113,7 +114,7 @@
         Point Name: <input size="35" type="text" id="placeName" name="PlaceName" value="">
         <td><button class="btn" onclick="addMarker()" >Add</button></td>
         <br>
-        <div id="inputs">
+        <div id="inputs" style="width:400px;">
           
         </div>
         
