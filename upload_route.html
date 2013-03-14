@@ -4,7 +4,139 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.gooa<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Walk-a-City by travelgeeks</title
+    
+    <!--googlemap codes begin here -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+    </script>
+
+    <script>
+        var map;
+        var tempArray = [];
+        var markersArray = [];
+        var tempLatLng;
+        function initialize(){
+          var mapProp = {
+            center:new google.maps.LatLng(48.858742,2.350850),
+            zoom:12,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          
+          //listener for clicking on map to add a temp marker
+          google.maps.event.addListener(map, 'click', function(event) {
+            addTempMarker(event.latLng);
+          });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        
+        
+        //addTempMarker function
+        function addTempMarker(location) {
+          tempLatLng=location
+          removeTempMarker();
+          marker = new google.maps.Marker({
+            position: location,
+            map: map,
+          });
+          tempArray.push(marker);
+          var latbox = document.getElementById("latbox");
+          latbox.value = location.lat();
+          var lngbox = document.getElementById("lngbox");
+          lngbox.value = location.lng();
+          
+        }
+        
+        function removeTempMarker(){
+          if (tempArray) {
+            for (i in tempArray) {
+              tempArray[i].setMap(null);
+            }
+            tempArray.length = 0;
+          }  
+        }
+       
+       //adds a permenant marker
+       function addMarker(){
+         //var p = new google.maps.LatLng(lat,lng);
+          var green = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+          marker = new google.maps.Marker({
+            position: tempLatLng,
+            map: map,
+            draggable: true,
+            icon: green
+          });
+          markersArray.push(marker);  
+          removeTempMarker();
+          if(tempLatLng!=null){
+          createInput();// create input box as well
+          }
+          tempLatLng=null;
+       }
+      
+        function createInput(){
+          var temp = document.getElementById("placeName");
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.value = temp.value;
+          input.size="35";
+          temp.value = '';
+          document.getElementById("inputs").appendChild(input);
+        }
+    </script>
+    <!--googlemap codes ends here -->
+    
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="http://travelgeeks.github.com/walkacity" ><h1>Walk-a-City</h1></a>
+        <h2></h2>
+      </div>
+    </header>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <font size="5">Creating a new route:</font>
+        <div id="googleMap" style="width:400px;height:320px;"></div>
+        <!--
+        Lat: <input size="15" type="text" id="latbox" name="lat" value="">
+        Long: <input size="15" type="text" id="lngbox" name="lng" value="">
+        -->
+        <font size="1">*Click on the map to select a point</font>
+        <br>
+        Point Name: <input size="35" type="text" id="placeName" name="PlaceName" value="">
+        <td><button class="btn" onclick="addMarker()" >Add</button></td>
+        <br>
+        <div id="inputs" style="width:400px;">
+          
+        </div>
+        
+        <b>Route Description:</b>
+        <br>
+        <textarea rows="5" cols="47" id="TITLE"></textarea> 
+        <br>
+        <a href="http://travelgeeks.github.com/walkacity/parisroutes2.html" ><button>Submit Route</button></a>
+      </div>
+    </div>
+  </body>
+</html>
+gleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
