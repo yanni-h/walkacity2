@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/geektest/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/geektest/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/geektest/assets/css/docs.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Walk-a-City by travelgeeks</title>
+
+    <style>
+      .navbar-inner {background:#2C3939; color:#FDF5E6; font-weight: bold}
+      h3 {margin: 10px 0 10px 0; color:#2C3939; font-family: "Architects Daughter",Comic Sans MS, serif}
+    </style>
+    
+  </head>
+
+  <body style="background-color:#FFE4C4">
+
+    <div class="navbar navbar-fixed-top">  
+    <div class="navbar-inner">    
+      <ul class="nav">  
+        <li>  
+          <a style="padding: 2px 2px 2px" href="http://travelgeeks.github.com/walkacity/index.html">
+            <img src="http://i1310.photobucket.com/albums/s647/skylarian/logo_word_v2_zps82eca441.png" width="125" height="45">
+          </a>  
+        </li>  
+        <li style="float: right">
+          <a style="color:#FFEBCD; font-family: Palatino Linotype" href="http://travelgeeks.github.com/walkacity/standard_userRoute.html">Help</a>
+        </li>  
+      </ul>   
+    </div>  
+    </div>
+
+    <div class="container-fluid">
+    
+      <div class="row-fluid">  
+        <div class="span12">
+          <p><img src="http://i1310.photobucket.com/albums/s647/skylarian/bonappetit_lyon_zps2c3e8531.png"></p>
+          <a href="http://travelgeeks.github.com/walkacity/submit_new_review.html">
+            <button class="btn btn-block" style="background:#2C3939; color:#FDF5E6">
+              <i class="icon-pencil icon-white"></i>Submit new review
+            </button>
+          </a>
+        </div>
+      </div>
+      
+      <h5 class="text-center">Average Rating: 4.7/5</h5>
+      <script>
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDate();
+        var year = currentTime.getFullYear();
+        var newReview=sessionStorage.getItem("review");
+        var user=sessionStorage.getItem("username");
+        if(newReview!=null){
+          document.write("<div class='well well-small'>");
+          document.write("<p>");
+          document.write("<strong>"+user+" at ");
+          document.write(day + "/" + month + "/" + year +" ");
+          if (minutes < 10){
+            minutes = "0" + minutes +":"
+          }
+          document.write(hours + ":" + minutes + " ");
+            if(hours > 11){
+          document.write("PM:");
+          } else {
+          document.write("AM:");
+          }
+          document.write("</strong></p>");
+          document.write("<p>"+newReview+"</p>");
+          document.write("</div>");        
+        }
+        
+      </script>
+      <div class="well well-small">
+        <p><strong>Donald Luck at 26/2/2013 12:51PM:</strong></p>
+        <p>Food food food! Seriously eat till you puke! Damn good!</p>        
+      </div>
+      <div class="well well-small">
+        <p><strong>Coobi Boo at 20/1/2013 10:39AM:</strong></p>
+        <p>If you want to know what Lyon tastes like, this route is it. All the michelin chefs are awesome!</p>
+      </div>
+
+    </div>
+  </body>
+</html>
