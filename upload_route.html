@@ -67,10 +67,12 @@
        //adds a permenant marker
        function addMarker(){
          //var p = new google.maps.LatLng(lat,lng);
-         marker = new google.maps.Marker({
+          var green = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+          marker = new google.maps.Marker({
             position: tempLatLng,
             map: map,
-            draggable: true
+            draggable: true,
+            icon: green
           });
           markersArray.push(marker);  
           removeTempMarker();
