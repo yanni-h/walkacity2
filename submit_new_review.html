@@ -19,9 +19,21 @@
       function processForm() {
         var review = document.getElementById("review").value;
         var rating = document.getElementById("rating").value;
+        var route = document.getElementById("route").value;
         sessionStorage.setItem("review", review);
         sessionStorage.setItem("rating", rating);
-        window.location="paris_standard_route1_reviews.html";
+        if(route=="Paris Top 5!"){
+          window.location="paris_standard_route1_reviews.html";
+        }
+        else if(route=="Shop Paris!"){
+          window.location="paris_standard_route2_reviews.html";
+        }
+        else if(route=="Antique Lyon"){
+          window.location="lyon_standard_route1_reviews.html";
+        }
+        else if(route=="Bon Appetit Lyon!"){
+          window.location="lyon_standard_route2_reviews.html";
+        }
       }
     </script>
     
@@ -59,7 +71,7 @@
           <img src="http://i1310.photobucket.com/albums/s647/skylarian/post_review_zps7a38036d.png">
         </legend>
         <label>Submit a review for:</label>
-          <select>
+          <select id="route">
             <option>Antique Lyon</option>
             <option>Bon Appetit Lyon!</option>
             <option>Paris Top 5!</option>
@@ -74,10 +86,6 @@
           <option>4</option>
           <option>5 AWESOME!</option>
         </select>
-        <script>
-          localStorage.reviews="Eiffel Tower is awesome!";
-          localStorage.rating="5";
-        </script>
         <button class="btn" style="background:#2C3939; color:#FDF5E6">Submit</button>
       </fieldset>
     </form>
