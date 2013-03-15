@@ -3,49 +3,66 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link href="/geektest/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/geektest/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/geektest/assets/css/docs.css" rel="stylesheet">
 
     <title>Walk-a-City by travelgeeks</title>
+    
+    <style>
+      .navbar-inner {background:#2C3939; color:#FDF5E6; font-weight: bold}
+      h3 {margin: 10px 0 10px 0; color:#2C3939; font-family: "Architects Daughter",Comic Sans MS, serif}
+    </style>
   </head>
 
-  <body>
-    <header>
-      <div class="inner">
-        <a href="http://travelgeeks.github.com/walkacity" ><h1>Walk-a-City</h1></a>
-        <h2></h2>
-        
-      </div>
-    </header>
+   <body style="background-color:#FFE4C4">
+    <div class="navbar navbar-fixed-top">  
+    <div class="navbar-inner">    
+      <ul class="nav">  
+        <li>  
+          <a style="padding: 2px 2px 2px" href="http://travelgeeks.github.com/walkacity/index.html">
+            <img src="http://i1310.photobucket.com/albums/s647/skylarian/logo_word_v2_zps82eca441.png" width="125" height="45">
+          </a>  
+        </li>  
+        <li style="float: right">
+          <a style="color:#FFEBCD; font-family: Palatino Linotype" href="http://travelgeeks.github.com/walkacity/standard_userRoute.html">Help</a>
+        </li>  
+      </ul>   
+    </div>  
+    </div>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
           <h3>Upload a new Route:</h3>
           <p>Have an interesting route of your own? Share it here.</p>
-          <a href="http://travelgeeks.github.com/walkacity/upload_route.html" ><button>Upload a New Route</button></a>
-       
+          <a href="http://travelgeeks.github.com/walkacity/upload_route.html" >
+            <button class="btn btn-block" style="background:#2C3939; color:#FDF5E6">Upload a New Route</button>
+          </a>
+        </div>
+      </div>
+     
+      <div class="row-fluid">
+        <div class="span12">
           <h3>User Proposed Routes:</h3>
           <p>Here are some routes provided by other users.</p>
-          <table border="1">
-            <tr>
-            <td>
+          <div class="well">
             <p><b>User Route 1: </b>Take this awesome walk through the little alleys of Paris to see some local action. Do bring tons of cash, preferably packed conveniently in a bag. Be reminded to sling the bag just over one shoulder. It is for your comfort. </p>
-            Uploader: Zxxffer1833 
-            <br>Date: 24-01-2013 
-            <br>Rating: 5/5 imaginary stars
-            <br>
-            <a href="http://travelgeeks.github.com/walkacity/route2.html" ><button>View this Route!</button></a>
-            <a href="http://travelgeeks.github.com/walkacity/paris_route2_reviews.html" ><button>Rate this route!</button></a>
-            </td>
-            </tr>
-          </table>
+            </br>Uploader: Zxxffer1833 
+            </br>Date: 24-01-2013 
+            </br>Rating: 5/5 imaginary stars
+            </br>
+            <a href="http://travelgeeks.github.com/walkacity/route2.html">
+              <button class="btn" style="background:#2C3939; color:#FDF5E6">View this Route!</button>
+            </a>
+            <a href="http://travelgeeks.github.com/walkacity/paris_route2_reviews.html">
+              <button class="btn" style="background:#2C3939; color:#FDF5E6">Rate this route!</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+         
   </body>
 </html>
