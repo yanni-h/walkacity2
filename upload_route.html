@@ -118,10 +118,9 @@
     </div>  
     </div>
     
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <font size="5">Creating a new route:</font>
-        <div id="googleMap" style="width:400px;height:320px;"></div>
+    <div id="container-fluid">
+        <h3>Creating a new route:</h3>
+        <div align="left"><div id="googleMap" style="width:400px;height:320px;"></div></div>
         <!--
         Lat: <input size="15" type="text" id="latbox" name="lat" value="">
         Long: <input size="15" type="text" id="lngbox" name="lng" value="">
@@ -129,7 +128,7 @@
         <font size="1">*Click on the map to select a point</font>
         <br>
         Point Name: <input size="35" type="text" id="placeName" name="PlaceName" value="">
-        <td><button class="btn" onclick="addMarker()" >Add</button></td>
+        <td><button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button></td>
         <br>
         <div id="inputs" style="width:400px;">
           
@@ -139,8 +138,9 @@
         <br>
         <textarea rows="5" cols="47" id="TITLE"></textarea> 
         <br>
-        <a href="http://travelgeeks.github.com/walkacity/parisroutes2.html" ><button>Submit Route</button></a>
-      </div>
+        <a href="http://travelgeeks.github.com/walkacity/parisroutes2.html">
+          <button class="btn" style="background:#2C3939; color:#FDF5E6">Submit Route</button>
+        </a>
     </div>
   </body>
 </html>
