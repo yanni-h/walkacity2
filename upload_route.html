@@ -119,19 +119,29 @@
     </div>
     
     <div class="container-fluid">
-        <h3>Creating a new route:</h3>
-        <div align="left"><div id="googleMap" style="width:400px;height:320px;"></div></div>
+      <div class="row-fluid">
+        <div class="span12">
+          <h3>Creating a new route:</h3>
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        <div class="span12">
+          <div align="left"><div id="googleMap" style="width:400px;height:320px;"></div></div>
+        </div>
+      </div>
+          
         <!--
         Lat: <input size="15" type="text" id="latbox" name="lat" value="">
         Long: <input size="15" type="text" id="lngbox" name="lng" value="">
         -->
-        <font size="1">*Click on the map to select a point</font>
-        <br>
-        Point Name: <input size="35" type="text" id="placeName" name="PlaceName" value="">
-        <td><button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button></td>
-        <br>
-        <div id="inputs" style="width:400px;">
-          
+        <div class="row-fluid">
+          <div class="span12">
+            <p><font size="1">*Click on the map to select a point</font></p>
+            <p>Point Name: <input size="35" type="text" id="placeName" name="PlaceName" value=""></p>
+            <button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button>
+            <div id="inputs" style="width:400px;">
+          </div>
         </div>
         
         <b>Route Description:</b>
