@@ -74,7 +74,12 @@
         var password = document.getElementById("password").value;
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
-        window.location="submit_new_review.html";
+        if(sessionStorage.getItem("site")=="uploadroute"){
+          window.location="upload_route.html";
+        }
+        else {
+          window.location="submit_new_review.html";
+        }
       }
     </script>
     
