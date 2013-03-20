@@ -92,6 +92,8 @@
           if(markersArray.length >=2){
             calcRoute();
           }
+          
+          document.getElementById("clearButton").style.visibility = "visible";
        }
       
         function createInput(){
@@ -196,10 +198,10 @@
             
           </div>
           <a href="http://travelgeeks.github.com/walkacity/upload_route.html">
-          <button class="btn" style="background:#2C3939; color:#FDF5E6">Clear Fields</button>
+          <button class="btn" style="background:#2C3939; color:#FDF5E6" hidden="hidden" id="clearButton">Clear Fields</button>
         </a>
         </div>
-        
+        <br>
         <b>Route Description:</b>
         <br>
         <textarea rows="5" class="span3" id="TITLE"></textarea> 
