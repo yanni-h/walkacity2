@@ -18,7 +18,7 @@
 
   <style>
     /* Dimensions set via css in MovingBoxes version 2.2.2+ */
-    #slider { width: 225px; }
+  	#slider { width: 225px; }
 		#slider li { width: 185px; }
 		
 		
@@ -40,13 +40,42 @@
             zoom:12,
             mapTypeId:google.maps.MapTypeId.ROADMAP
           };
-          //map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-          map= sessionStorage.getItem("uploadMap");
+          map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
           
           directionsDisplay.setMap(map);
+          populatePoints();
         }
         google.maps.event.addDomListener(window, 'load', initialize);
         
+        function populatePoints(){
+          markersArray = sessionStorage.getItem(uploadMarkers);
+          
+          for (i in markersArray) {
+              markersArray[i].setMap(null);
+            }
+            
+            var start = markersArray[0].getPosition();
+            var end = markersArray[markersArray.length-1].getPosition();
+            var waypointArray=[];
+            for (var i = 1; i < markersArray.length-1; i++){
+            waypointArray.push({
+                  location:markersArray[i].getPosition(),
+                  stopover:true
+              });
+            }
+           
+            var request = {
+              origin:start,
+              destination:end,
+              waypoints:waypointArray,
+              travelMode: google.maps.TravelMode.WALKING
+            };
+            directionsService.route(request, function(result, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(result);
+              }
+            });
+        }
   </script>
 	<script>
 	$(function(){
