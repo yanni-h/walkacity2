@@ -48,7 +48,7 @@
         google.maps.event.addDomListener(window, 'load', initialize);
         
         function populatePoints(){
-          markersArray = JSON.parse(localStorage['markers']);
+          markersArray = JSON.parse(sessionStorage.getItem("markers"));
                       
             var start = markersArray[0].getPosition();
             var end = markersArray[markersArray.length-1].getPosition();
