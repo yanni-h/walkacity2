@@ -141,9 +141,11 @@
           var saveMarkers = markersArray;
           var saveTitle = document.getElementById("routeTitle").value;
           var saveDescription = document.getElementById("routeDescription").value;
+          var saveMap = map;
           sessionStorage.setItem("uploadTitle",saveTitle);
-          sessionStorage.setItem("uploadMap",saveMarkers);
+          sessionStorage.setItem("uploadMarker",saveMarkers);
           sessionStorage.setItem("uploadDescription",saveDescription);
+          sessionStorage.setItem("uploadMap",saveMap);
           
          
           window.location="parisroutes2.html";
