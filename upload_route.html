@@ -148,7 +148,7 @@
           var temp = document.getElementById("placeName");
           var input = document.createElement('input');
           input.type = 'text';
-          input.value = temp.value;
+          input.value = sessionStorage.getItem("uploadTitle");
           input.size="35";
           temp.value = '';
           document.getElementById("inputs").appendChild(input);
@@ -234,9 +234,8 @@
         <a href="http://travelgeeks.github.com/walkacity/upload_route.html">
           <button class="btn" style="background:#2C3939; color:#FDF5E6" hidden="hidden" id="clearButton">Clear Fields</button>
         </a>
-        <a href="http://travelgeeks.github.com/walkacity/parisroutes2.html">
           <button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="saveDetails()">Submit Route</button>
-        </a>
+       
     </div>
   </body>
 </html>
