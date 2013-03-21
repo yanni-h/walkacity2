@@ -142,7 +142,7 @@
           var saveDescription = document.getElementById("routeDescription").value;
           var saveMap = map;
           sessionStorage.setItem("uploadTitle",saveTitle);
-          localStorage['markers']=JSON.stringify(markersArray);
+           sessionStorage.setItem("markers",JSON.stringify(markersArray));
           sessionStorage.setItem("uploadDescription",saveDescription);
           sessionStorage.setItem("uploadMap",saveMap);
           
