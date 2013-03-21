@@ -50,8 +50,21 @@
           
           <div class="well">
             <p><b>Your new route: </b>Imagine that this is your uploaded map </p>
-            </br>Uploader: NewUserUpload12 
-            </br>Date: 22-03-2013 
+            <script>
+              var user=sessionStorage.getItem("username");
+              document.write("</br>Uploader: "+user);
+              document.write("</br>Date: ");
+              document.write(day + "/" + month + "/" + year +" ");
+              if (minutes < 10){
+                minutes = "0" + minutes +":"
+              }
+              document.write(hours + ":" + minutes + " ");
+                if(hours > 11){
+              document.write("PM:");
+              } else {
+              document.write("AM:");
+              }
+            </script> 
             </br>Rating: --Not Yet Rated--
             </br>
             <div class="btn-toolbar">
