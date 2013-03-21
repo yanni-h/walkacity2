@@ -49,7 +49,12 @@
           <p>Here are some routes provided by other users.</p>
           
           <div class="well">
-            <p><b>Your new route: </b>Imagine that this is your uploaded map </p>
+            <script>
+              var saveTitle=sessionStorage.getItem("uploadTitle");
+              var saveDescription=sessionStorage.getItem("uploadDescription");
+              
+              document.write("<p><b>"+saveTitle+": </b>"+saveDescription+"</p>");
+            </script>
             <script>
               var user=sessionStorage.getItem("username");
               var currentTime = new Date();
