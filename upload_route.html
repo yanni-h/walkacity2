@@ -92,7 +92,7 @@
           if(markersArray.length >=2){
             calcRoute();
           }
-          
+          document.getElementById("route").style.display = "block";
          
        }
       
@@ -134,6 +134,12 @@
               }
             });
           
+        }
+        
+        function saveDetails(){
+          var saveMap = document.getElementById("googleMap");
+          var saveTitle = document.createElement('routeTitle');
+          var saveDescription = document.createElement('routeDescription');
         }
     </script>
     <!--googlemap codes ends here -->
@@ -194,6 +200,7 @@
             <br>
             <input size="35" type="text" id="placeName" name="PlaceName" value="">
             <button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button></p>
+            <div id="route" hidden="hidden"><b>Route:</b></div>
             <div id="inputs" style="width:400px;">
             
           </div>
@@ -202,18 +209,18 @@
         <br>
         <b>Route Title:</b>
         <br>
-        <input size="35" type="text" value="">
+        <input size="35" type="text" value="" id="routeTitle">
             
         <br>
         <b>Route Description:</b>
         <br>
-        <textarea rows="5" class="span3" id="TITLE"></textarea> 
+        <textarea rows="5" class="span3" id="routeDescription"></textarea> 
         <br>
         <a href="http://travelgeeks.github.com/walkacity/upload_route.html">
           <button class="btn" style="background:#2C3939; color:#FDF5E6" hidden="hidden" id="clearButton">Clear Fields</button>
         </a>
         <a href="http://travelgeeks.github.com/walkacity/parisroutes2.html">
-          <button class="btn" style="background:#2C3939; color:#FDF5E6">Submit Route</button>
+          <button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="saveDetails()">Submit Route</button>
         </a>
     </div>
   </body>
