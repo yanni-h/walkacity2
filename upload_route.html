@@ -141,19 +141,12 @@
           var saveMap = document.getElementById("googleMap");
           var saveTitle = document.getElementById("routeTitle");
           var saveDescription = document.getElementById("routeDescription");
-          sessionStorage.setItem("uploadTitle","tt");
+          sessionStorage.setItem("uploadTitle",saveTitle);
           sessionStorage.setItem("uploadMap",saveMap);
           sessionStorage.setItem("uploadDescription",saveDescription);
           
-          var temp = document.getElementById("placeName");
-          var input = document.createElement('input');
-          input.type = 'text';
-          input.value = sessionStorage.getItem("uploadTitle");
-          input.size="35";
-          temp.value = '';
-          document.getElementById("inputs").appendChild(input);
-          
-        //   window.location="parisroutes2.html";
+         
+          window.location="parisroutes2.html";
         
         }
     </script>
