@@ -138,12 +138,11 @@
         }
         
         function saveDetails(){
-          var saveMarkers = markersArray;
           var saveTitle = document.getElementById("routeTitle").value;
           var saveDescription = document.getElementById("routeDescription").value;
           var saveMap = map;
           sessionStorage.setItem("uploadTitle",saveTitle);
-          sessionStorage.setItem("uploadMarker",saveMarkers);
+          sessionStorage.setItem("uploadMarker",markersArray);
           sessionStorage.setItem("uploadDescription",saveDescription);
           sessionStorage.setItem("uploadMap",saveMap);
           
