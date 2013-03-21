@@ -52,6 +52,12 @@
             <p><b>Your new route: </b>Imagine that this is your uploaded map </p>
             <script>
               var user=sessionStorage.getItem("username");
+              var currentTime = new Date();
+              var hours = currentTime.getHours();
+              var minutes = currentTime.getMinutes();
+              var month = currentTime.getMonth() + 1;
+              var day = currentTime.getDate();
+              var year = currentTime.getFullYear();
               document.write("</br>Uploader: "+user);
               document.write("</br>Date: ");
               document.write(day + "/" + month + "/" + year +" ");
