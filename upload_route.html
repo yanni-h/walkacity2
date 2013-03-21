@@ -145,9 +145,15 @@
           sessionStorage.setItem("uploadMap",saveMap);
           sessionStorage.setItem("uploadDescription",saveDescription);
           
+          var temp = document.getElementById("placeName");
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.value = temp.value;
+          input.size="35";
+          temp.value = '';
+          document.getElementById("inputs").appendChild(input);
           
-          
-           window.location="parisroutes2.html";
+        //   window.location="parisroutes2.html";
         
         }
     </script>
