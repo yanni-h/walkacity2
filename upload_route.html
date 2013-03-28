@@ -24,6 +24,7 @@
         var tempArray = [];
         var markersArray = [];
         var tempLatLng;
+        var count=0;
         var rendererOptions = {
           draggable: true
         };
@@ -42,7 +43,11 @@
           
           //listener for clicking on map to add a temp marker
           google.maps.event.addListener(map, 'click', function(event) {
-             document.getElementById("placeNameDiv").style.display = "block";
+             
+             if(count=0){
+              document.getElementById("placeNameDiv").style.display = "block";
+              count++;
+             }
             addTempMarker(event.latLng);
           });
           directionsDisplay.setMap(map);
