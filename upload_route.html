@@ -42,6 +42,7 @@
           
           //listener for clicking on map to add a temp marker
           google.maps.event.addListener(map, 'click', function(event) {
+             document.getElementById("placeNameDiv").style.display = "block";
             addTempMarker(event.latLng);
           });
           directionsDisplay.setMap(map);
@@ -63,7 +64,6 @@
           var lngbox = document.getElementById("lngbox");
           lngbox.value = location.lng();
           
-          document.getElementById("placeNameDiv").style.display = "block";
         }
         
         function removeTempMarker(){
