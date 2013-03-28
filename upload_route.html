@@ -24,7 +24,8 @@
         var tempArray = [];
         var markersArray = [];
         var tempLatLng;
-        var count=0;
+        var counter=0;
+      
         var rendererOptions = {
           draggable: true
         };
@@ -44,10 +45,7 @@
           //listener for clicking on map to add a temp marker
           google.maps.event.addListener(map, 'click', function(event) {
              
-             if(count==0){
-              document.getElementById("placeNameDiv").style.display = "block";
-              count++;
-             }
+            document.getElementById("placeNameDiv").style.display = "block";
             addTempMarker(event.latLng);
           });
           directionsDisplay.setMap(map);
@@ -68,7 +66,7 @@
           latbox.value = location.lat();
           var lngbox = document.getElementById("lngbox");
           lngbox.value = location.lng();
-          
+          counter=1;
         }
         
         function removeTempMarker(){
@@ -78,29 +76,30 @@
             }
             tempArray.length = 0;
           }  
+          counter=0;
         }
        
        //adds a permenant marker
        function addMarker(){
-         //var p = new google.maps.LatLng(lat,lng);
-          var green = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
-          marker = new google.maps.Marker({
-            position: tempLatLng,
-            map: map,
-            draggable: true,
-            icon: green
-          });
-          markersArray.push(marker);  
-          removeTempMarker();
-          if(tempLatLng!=null){
-          createInput();// create input box as well
+          if (counter==1){}
+            var green = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+            marker = new google.maps.Marker({
+              position: tempLatLng,
+              map: map,
+              draggable: true,
+              icon: green
+            });
+            markersArray.push(marker);  
+            removeTempMarker();
+            if(tempLatLng!=null){
+            createInput();// create input box as well
+            }
+            tempLatLng=null;
+            if(markersArray.length >=2){
+              calcRoute();
+            }
+            
           }
-          tempLatLng=null;
-          if(markersArray.length >=2){
-            calcRoute();
-          }
-          
-         
        }
       
         function createInput(){
@@ -218,9 +217,9 @@
             <button class="btn" id="addButton" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button></p>
             <div id="route" hidden="hidden"><b>Route:</b></div>
             <div id="inputs" style="width:400px;">
-            <br>
+            
           </div>
-          
+          <br>
         </div>
         
         <b>Route Title:</b>
