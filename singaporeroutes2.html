@@ -43,7 +43,7 @@
               var saveTitle=sessionStorage.getItem("uploadTitle");
               var activity1=sessionStorage.getItem("activity1");
               
-              document.write("<p><b>"+saveTitle+"</p></b>");
+              document.write("<p><b>"+saveTitle+":</p></b>");
             </script>
             <script>
               var user=sessionStorage.getItem("username");
@@ -53,7 +53,7 @@
               var month = currentTime.getMonth() + 1;
               var day = currentTime.getDate();
               var year = currentTime.getFullYear();
-              document.write("</br>Uploader: "+user);
+              document.write("Uploader: "+user);
               document.write("</br>Date: ");
               document.write(day + "/" + month + "/" + year +" ");
               if (minutes < 10){
