@@ -62,7 +62,8 @@
           var lngbox = document.getElementById("lngbox");
           lngbox.value = location.lng();
           
-          document.getElementById("placeNameDiv").style.display = "block";
+          document.getElementById("placeName").style.display = "block";
+          document.getElementById("addButton").style.display = "block";
         }
         
         function removeTempMarker(){
@@ -205,11 +206,11 @@
         Long: <input size="15" type="text" id="lngbox" name="lng" value="">
         -->
         <div class="row-fluid">
-          <div class="span12" id="placeNameDiv" hidden="hidden">
+          <div class="span12" >
             <p>Point Name: 
             <br>
-            <input size="35" type="text" id="placeName" name="PlaceName" value="">
-            <button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button></p>
+            <input size="35" type="text" id="placeName" hidden="hidden" name="PlaceName" value="">
+            <button class="btn" id="addButton" hidden="hidden" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button></p>
             <div id="route" hidden="hidden"><b>Route:</b></div>
             <div id="inputs" style="width:400px;">
             
