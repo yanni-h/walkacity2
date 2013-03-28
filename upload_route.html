@@ -24,7 +24,7 @@
         var tempArray = [];
         var markersArray = [];
         var tempLatLng;
-        var counter=0;
+        var tempExist=false;
       
         var rendererOptions = {
           draggable: true
@@ -61,12 +61,9 @@
             position: location,
             map: map,
           });
+          tempExist=true;
           tempArray.push(marker);
-          var latbox = document.getElementById("latbox");
-          latbox.value = location.lat();
-          var lngbox = document.getElementById("lngbox");
-          lngbox.value = location.lng();
-          counter=1;
+          
         }
         
         function removeTempMarker(){
@@ -76,13 +73,14 @@
             }
             tempArray.length = 0;
             counter=0;
+            tempExist=false;
           }  
           
         }
        
        //adds a permenant marker
        function addMarker(){
-          if (counter==1){
+          if (tempExist){
             var green = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
             marker = new google.maps.Marker({
               position: tempLatLng,
