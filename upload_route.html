@@ -31,6 +31,7 @@
         var directionsService = new google.maps.DirectionsService();
 
         function initialize(){
+          document.getElementById("placeNameDiv").style.display = "none";
           var mapProp = {
             center:new google.maps.LatLng(48.858742,2.350850),
             zoom:12,
