@@ -35,6 +35,7 @@
         var france = new Array('Paris', 'Lyon');
         var germany = new Array('Munich', 'Berlin');
         var spain = new Array('Barcelona', 'Madrid');
+        var singapore = new Array('Singapore');
 
         switch (ddl1.value) {
             case 'France':
@@ -53,6 +54,12 @@
                 document.getElementById(ddl2).options.length = 0;
                 for (i = 0; i < spain.length; i++) {
                     createOption(document.getElementById(ddl2), spain[i], spain[i]);
+                }
+                break;
+            case 'Singapore':
+                document.getElementById(ddl2).options.length = 0;
+                for (i = 0; i < spain.length; i++) {
+                    createOption(document.getElementById(ddl2), singapore[i], singapore[i]);
                 }
                 break;
                 default:
@@ -76,6 +83,8 @@
           window.location = "paris.html";
         }else if(city == 'Lyon'){
           window.location = "lyon.html"
+        }else if(city == 'Singapore'){
+          window.location = "singapore.html";
         }else{
           window.location = "index.html";
         }
@@ -90,6 +99,7 @@
               <option value="France">France</option>
               <option value="Germany">Germany</option>
               <option value="Spain">Spain</option>
+              <option value="Spain">Singapore</option>
             </select>
             <label style="font-style:bold; font-family:'Calibri',sans serif; color:#000080; font-size:large">City:</label>
             <select id="ddl2">
