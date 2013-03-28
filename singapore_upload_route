@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/geektest/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/geektest/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/geektest/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/movingboxes.css" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Walk-a-City by travelgeeks</title
+    
+    <!--googlemap codes begin here -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+    </script>
+
+  <script>
+        var map;
+        var tempArray = [];
+        var markersArray = [];
+        var tempLatLng;
+        var tempExist=false;
+      
+        var rendererOptions = {
+          draggable: true
+        };
+        var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);;
+        var directionsService = new google.maps.DirectionsService();
+
+        function initialize(){
+          document.getElementById("placeNameDiv").style.display = "none";
+          var mapProp = {
+            center:new google.maps.LatLng(1.3667,103.75),
+            zoom:12,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          
+          
+          //listener for clicking on map to add a temp marker
+          google.maps.event.addListener(map, 'click', function(event) {
+             
+            document.getElementById("placeNameDiv").style.display = "block";
+            addTempMarker(event.latLng);
+          });
+          directionsDisplay.setMap(map);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        
+        
+        //addTempMarker function
+        function addTempMarker(location) {
+          tempLatLng=location
+          removeTempMarker();
+          marker = new google.maps.Marker({
+            position: location,
+            map: map,
+          });
+          tempExist=true;
+          tempArray.push(marker);
+          
+        }
+        
+        function removeTempMarker(){
+          if (tempArray) {
+            for (i in tempArray) {
+              tempArray[i].setMap(null);
+            }
+            tempArray.length = 0;
+            counter=0;
+            tempExist=false;
+          }  
+          
+        }
+       
+       //adds a permenant marker
+       function addMarker(){
+          if (tempExist){
+            var green = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+            marker = new google.maps.Marker({
+              position: tempLatLng,
+              map: map,
+              draggable: true,
+              icon: green
+            });
+            markersArray.push(marker);  
+            removeTempMarker();
+            if(tempLatLng!=null){
+            createInput();// create input box as well
+            }
+            tempLatLng=null;
+            if(markersArray.length >=2){
+              calcRoute();
+            }
+            
+          }
+       }
+      
+        function createInput(){
+          var temp = document.getElementById("placeName");
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.value = temp.value;
+          input.size="35";
+          temp.value = '';
+          document.getElementById("inputs").appendChild(input);
+          document.getElementById("route").style.display = "block";
+        }
+        
+        function calcRoute() {
+          
+            for (i in markersArray) {
+              markersArray[i].setMap(null);
+            }
+            
+            var start = markersArray[0].getPosition();
+            var end = markersArray[markersArray.length-1].getPosition();
+            var waypointArray=[];
+            for (var i = 1; i < markersArray.length-1; i++){
+            waypointArray.push({
+                  location:markersArray[i].getPosition(),
+                  stopover:true
+              });
+            }
+           
+            var request = {
+              origin:start,
+              destination:end,
+              waypoints:waypointArray,
+              travelMode: google.maps.TravelMode.WALKING
+            };
+            directionsService.route(request, function(result, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(result);
+              }
+            });
+          
+        }
+        
+        function saveDetails(){
+          var saveTitle = document.getElementById("routeTitle").value;
+          var saveDescription = document.getElementById("routeDescription").value;
+          var saveMap = map;
+          sessionStorage.setItem("uploadTitle",saveTitle);
+          //sessionStorage.setItem("markers",JSON.stringify(markersArray));
+          sessionStorage.setItem("uploadDescription",saveDescription);
+          sessionStorage.setItem("uploadMap",saveMap);
+          
+         
+          window.location="parisroutes2.html";
+        
+        }
+    </script>
+    <!--googlemap codes ends here -->
+    
+    <style>
+      .navbar-inner {background:#2C3939; color:#FDF5E6; font-weight: bold}
+      h3 {margin: 10px 0 10px 0; color:#2C3939; font-family: "Architects Daughter",Comic Sans MS, serif}
+    </style>
+    
+  </head>
+
+  <body style="background-color:#FFE4C4">
+  
+    <script>
+      var user=sessionStorage.getItem("username");
+      if(user==null){
+        sessionStorage.setItem("site","uploadroute");
+        window.location="userLogin.html";
+      }
+    </script>
+    
+    <div class="navbar navbar-fixed-top">  
+    <div class="navbar-inner">    
+      <ul class="nav">  
+        <li>  
+          <a style="padding: 2px 2px 2px" href="http://travelgeeks.github.com/walkacity/index.html">
+            <img src="http://i1310.photobucket.com/albums/s647/skylarian/logo_word_v2_zps82eca441.png" width="125" height="45">
+          </a>  
+        </li>  
+        <li style="float: right">
+          <a style="color:#FFEBCD; font-family: Palatino Linotype" href="http://travelgeeks.github.com/walkacity/uploadNewRoute2.html">Help</a>
+        </li>  
+      </ul>   
+    </div>  
+    </div>
+    
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <h3>Create a new route:</h3>
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        <div class="span12">
+          <div align="left"><div id="googleMap" algin="left" style="width:285px;height:285px;"></div></div>
+          <p><font size="1">*Click on the map to add a new point</font></p>
+        </div>
+      </div>
+          
+        <!--
+        Lat: <input size="15" type="text" id="latbox" name="lat" value="">
+        Long: <input size="15" type="text" id="lngbox" name="lng" value="">
+        -->
+        <div class="row-fluid">
+          <div class="span12" id="placeNameDiv" hidden="hidden">
+            <p>Point Name: 
+            <br>
+            <input size="35" type="text" id="placeName"  name="PlaceName" value="">
+            <button class="btn" id="addButton" style="background:#2C3939; color:#FDF5E6" onclick="addMarker()">Add</button></p>
+            <div id="route" hidden="hidden"><b>Route:</b></div>
+            <div id="inputs" style="width:400px;">
+            
+          </div>
+          <br>
+        </div>
+        
+        <b>Route Title:</b>
+        <br>
+        <input size="35" type="text" value="" id="routeTitle">
+            
+        <br>
+        <b>Route Description:</b>
+        <br>
+        <textarea rows="5" class="span3" id="routeDescription"></textarea> 
+        <br>
+        <a href="http://travelgeeks.github.com/walkacity/upload_route.html">
+          <button class="btn" style="background:#2C3939; color:#FDF5E6" hidden="hidden" id="clearButton">Clear Fields</button>
+        </a>
+          <button class="btn" style="background:#2C3939; color:#FDF5E6" onclick="saveDetails()">Submit Route</button>
+       
+    </div>
+  </body>
+</html>
