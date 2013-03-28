@@ -143,11 +143,11 @@
         
         function saveDetails(){
           var saveTitle = document.getElementById("routeTitle").value;
-          var saveDescription = document.getElementById("routeDescription").value;
+          var saveActivities = document.getElementById("activities1").value;
           var saveMap = map;
           sessionStorage.setItem("uploadTitle",saveTitle);
           //sessionStorage.setItem("markers",JSON.stringify(markersArray));
-          sessionStorage.setItem("uploadDescription",saveDescription);
+          sessionStorage.setItem("uploadDescription",saveActivities);
           sessionStorage.setItem("uploadMap",saveMap);
           
          
@@ -228,9 +228,15 @@
         <b>Activities:</b>
         <br>
         <label class="checkbox inline">
-          <input type="checkbox" name="activities" id="activities1" value="option1"> Sightseeing</br>
-          <input type="checkbox" name="activities" id="activities2" value="option2"> Shopping</br>
-          <input type="checkbox" name="activities" id="activities3" value="option3"> Dining</br>
+          <input type="checkbox" name="activities" id="activities1" value="option1"> Sightseeing
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" name="activities" id="activities2" value="option2"> Shopping
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" name="activities" id="activities3" value="option3"> Dining
+        </label>
+        <label class="checkbox inline">
           <input type="checkbox" name="activities" id="activities4" value="option4"> Adventure
         </label>
         </br>
