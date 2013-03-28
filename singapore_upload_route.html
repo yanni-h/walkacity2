@@ -33,7 +33,6 @@
         var directionsService = new google.maps.DirectionsService();
 
         function initialize(){
-          document.getElementById("placeNameDiv").style.display = "none";
           var mapProp = {
             center:new google.maps.LatLng(1.301,103.84),
             zoom:11,
@@ -209,7 +208,7 @@
         Long: <input size="15" type="text" id="lngbox" name="lng" value="">
         -->
         <div class="row-fluid">
-          <div class="span12" id="placeNameDiv" hidden="hidden">
+          <div class="span12" id="placeNameDiv" >
             <p>Point Name: 
             <br>
             <input size="35" type="text" id="placeName"  name="PlaceName" value="">
