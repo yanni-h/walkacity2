@@ -160,10 +160,28 @@
             saveActivities+=document.getElementById("activities4").value;
           }
           
+          var savePpl = "";
+          if(document.getElementById("ppl1").checked==true){
+            savePpl+=document.getElementById("ppl1").value;
+            savePpl+=" ";
+          }
+          if(document.getElementById("ppl2").checked==true){
+            savePpl+=document.getElementById("ppl2").value;
+            savePpl+=" ";
+          }
+          if(document.getElementById("ppl3").checked==true){
+            savePpl+=document.getElementById("ppl3").value;
+            savePpl+=" ";
+          }
+          if(document.getElementById("ppl4").checked==true){
+            savePpl+=document.getElementById("ppl4").value;
+          }
+          
           var saveMap = map;
           sessionStorage.setItem("uploadTitle",saveTitle);
           //sessionStorage.setItem("markers",JSON.stringify(markersArray));
           sessionStorage.setItem("activity1",saveActivities);
+          sessionStorage.setItem("ppl1",savePpl);
           sessionStorage.setItem("uploadMap",saveMap);
           
          
