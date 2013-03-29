@@ -143,7 +143,23 @@
         
         function saveDetails(){
           var saveTitle = document.getElementById("routeTitle").value;
-          var saveActivities = document.getElementById("activities1").value;
+          var saveActivities = "";
+          if(document.getElementById("activities1").checked==true){
+            saveActivities+=document.getElementById("activities1").value;
+            saveActivities+=" ";
+          }
+          if(document.getElementById("activities2").checked==true){
+            saveActivities+=document.getElementById("activities2").value;
+            saveActivities+=" ";
+          }
+          if(document.getElementById("activities3").checked==true){
+            saveActivities+=document.getElementById("activities3").value;
+            saveActivities+=" ";
+          }
+          if(document.getElementById("activities4").checked==true){
+            saveActivities+=document.getElementById("activities4").value;
+          }
+          
           var saveMap = map;
           sessionStorage.setItem("uploadTitle",saveTitle);
           //sessionStorage.setItem("markers",JSON.stringify(markersArray));
@@ -228,32 +244,32 @@
         <b>Activities:</b>
         <br>
         <label class="checkbox inline">
-          <input type="checkbox" name="activities" id="activities1" value="option1"> Sightseeing
+          <input type="checkbox" name="activities" id="activities1" value="Sightseeing"> Sightseeing
         </label>
         <label class="checkbox inline">
-          <input type="checkbox" name="activities" id="activities2" value="option2"> Shopping
+          <input type="checkbox" name="activities" id="activities2" value="Shopping"> Shopping
+        </label></br>
+        <label class="checkbox inline">
+          <input type="checkbox" name="activities" id="activities3" value="Dining"> Dining
         </label>
         <label class="checkbox inline">
-          <input type="checkbox" name="activities" id="activities3" value="option3"> Dining
-        </label>
-        <label class="checkbox inline">
-          <input type="checkbox" name="activities" id="activities4" value="option4"> Adventure
+          <input type="checkbox" name="activities" id="activities4" value="Adventure"> Adventure
         </label>
         </br>
         
         <b>Suitable for:</b>
         <br>
         <label class="checkbox inline">
-          <input type="checkbox" name="persons" id="ppl1" value="option1"> Families
+          <input type="checkbox" name="persons" id="ppl1" value="Families"> Families
         </label>
         <label class="checkbox inline">
-          <input type="checkbox" name="persons" id="ppl2" value="option2"> Couples
+          <input type="checkbox" name="persons" id="ppl2" value="Couples"> Couples
         </label></br>
         <label class="checkbox inline">
-          <input type="checkbox" name="persons" id="ppl3" value="option3"> Youngsters
+          <input type="checkbox" name="persons" id="ppl3" value="Youngsters"> Youngsters
         </label>
         <label class="checkbox inline">
-          <input type="checkbox" name="persons" id="ppl4" value="option4"> Elderly
+          <input type="checkbox" name="persons" id="ppl4" value="Elderly"> Elderly
         </label>
         </br></br>
         
