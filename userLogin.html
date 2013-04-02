@@ -68,7 +68,11 @@
       function processLogin() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        if(username==null || password==null) {
+        if(username=="null") {
+          alert("Please enter your username/password");
+          break;
+        }
+        if(password=="null") {
           alert("Please enter your username/password");
           break;
         }
