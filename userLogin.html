@@ -64,15 +64,12 @@
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
                                    
     <script>
-      function error() {
-        alert("Please enter your username/password");
-      }
       
       function processLogin() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         if(username=="null" || password=="null") {
-          error();
+          alert("Please enter your username/password");
         }
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
