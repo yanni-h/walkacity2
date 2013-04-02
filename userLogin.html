@@ -64,18 +64,15 @@
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
                                    
     <script>
-      function display_error(){
-        alert("Please enter your username/password");
-      }
       
       function processLogin() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        if(username==undefined) {
-          display_error();
+        if(username==null) {
+          displayError();
         }
-        if(password==undefined) {
-          display_error();
+        if(password==null) {
+          displayError();
         }
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
@@ -90,6 +87,10 @@
         else {
           window.location="submit_new_review.html";
         }
+      }
+      
+      function displayError() {
+        alert("Please enter your username/password");
       }
     </script>
     
