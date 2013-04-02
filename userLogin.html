@@ -70,7 +70,12 @@
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
         if(sessionStorage.getItem("site")=="uploadroute"){
-          window.location="singapore_upload_route.html";
+          if(sessionStorage.getItem("city")=="Singapore"){
+            window.location="singapore_pre_upload_route.html";
+          }
+          else {
+            window.location="upload_route.html";
+          }
         }
         else {
           window.location="submit_new_review.html";
