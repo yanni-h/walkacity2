@@ -64,16 +64,9 @@
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
                                    
     <script>
-      
       function processLogin() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        if(username=="Undefined") {
-          displayError();
-        }
-        if(password=="Undefined") {
-          displayError();
-        }
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
         if(sessionStorage.getItem("site")=="uploadroute"){
@@ -87,10 +80,6 @@
         else {
           window.location="submit_new_review.html";
         }
-      }
-      
-      function displayError() {
-        alert("Please enter your username/password");
       }
     </script>
     
