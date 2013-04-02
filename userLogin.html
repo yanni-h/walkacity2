@@ -71,10 +71,10 @@
       function processLogin() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        if(username=="null") {
+        if(username==undefined) {
           display_error();
         }
-        if(password=="null") {
+        if(password==undefined) {
           display_error();
         }
         sessionStorage.setItem("username", username);
