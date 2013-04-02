@@ -71,7 +71,7 @@
       function processLogin() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        if(username==null || password==null) {
+        if(username=="null" || password=="null") {
           error();
         }
         sessionStorage.setItem("username", username);
