@@ -18,6 +18,14 @@
 
   <body style="background-color:#FFE4C4">
   
+    <script>
+      var user=sessionStorage.getItem("username");
+      if(user==null){
+        sessionStorage.setItem("site","uploadroute");
+        window.location="userLogin.html";
+      }
+    </script>
+    
     <div class="navbar navbar-fixed-top">  
     <div class="navbar-inner">    
       <ul class="nav">  
